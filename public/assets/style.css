@@ -1,0 +1,11 @@
+section > div {
+    margin: 30px 0;
+}
+
+input {
+    padding: 5px;
+}
+
+p.error {
+    color: crimson;
+}

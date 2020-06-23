@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta charset="utf-8">
+<link href="/assets/style.css" rel="stylesheet">
+</head>
+<body>
+<section>
+<form action="calculate" method="post">
+{% if error == 1 %}
+    <p class="error">Minden koordinátának érvényes GPS értéknek kell lennie!</p>
+{% endif %}
+<div>
+    <div>Point A:</div>
+    <label>Latitude: <input step="0.0000001" type="number" name="coord_a_lat" value="{{ coord_a_lat }}" required></label>
+    <label>Longitude: <input step="0.0000001" type="number" name="coord_a_long" value="{{ coord_a_long }}" required></label>
+</div>
+<br>
+<div>
+    <div>Point B:</div>
+    <label>Latitude: <input step="0.0000001" type="number" name="coord_b_lat" value="{{ coord_b_lat }}" required></label>
+    <label>Longitude: <input step="0.0000001" type="number" name="coord_b_long" value="{{ coord_b_long }}" required></label>
+</div>
+<br>
+<div>
+<button>Calculate</button>
+</div>
+</form>
+{% if result == '1' %}
+<div>
+2.
+<br>
+Point C: {{ coord_c_lat }}, {{ coord_c_long }}
+<br>
+Point D: {{ coord_d_lat }}, {{ coord_d_long }}
+</div>
+
+<div>
+3.
+<br>
+Perimeter: {{ perimeter }} m
+</div>
+
+<div>
+4.
+<br>
+Area: {{ area }} m<sup>2</sup>
+</div>
+
+<div>
+5.
+<br>
+Total cost: {{ cost }} EUR
+</div>
+{% endif %}
+</section>
+</body>
+</html>
